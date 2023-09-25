@@ -7,7 +7,11 @@ Du skal finde elementet med id="redFigure" og console logge det.
 Du skal finde elementet med id="yellowFigure" og console logge det. 
 */
 
-// din kode her
+let myRedElement = document.getElementById('redFigure');
+let yellowElement = document.getElementById('yellowFigure');
+
+console.log(myRedElement);
+console.log(yellowElement);
 
 
 /* opgave 1.2
@@ -16,8 +20,8 @@ farven på elementerne skal være blå. brug evt. elelement.style.backgroundColo
 */
 
 
-// din kode her
-
+myRedElement.style.backgroundColor = "blue";
+yellowElement.style.backgroundColor = "blue";
 
 
 /* opgave 2.1
@@ -27,16 +31,25 @@ Du skal oprette følgende HTML elementer i Elementet med id opgaveTwo.
 */
 
 
-// din kode her
+let opgaveTwoElement = document.getElementById("opgaveTwo");
 
+let h2Element = document.createElement("h2");
+h2Element.textContent = "Opgave 2.1 løsning";
+
+let pElement = document.createElement("p");
+pElement.textContent = "Jeg har løst opgave 2.1";
+
+opgaveTwoElement.appendChild(h2Element);
+opgaveTwoElement.appendChild(pElement);
 
 // opgave 3 liveHTML lists
 /* opgave 3.1
 Du skal finde alle elementer med klassen purpleFigures og console logge resultatet
 */
 
-// din kode her
+let purpleFigures = document.getElementsByClassName("purpleFigures");
 
+console.log(purpleFigures);
 
 /* opgave 3.2
 Du skal finde alle elementer med klassen purpleFigures og bruge array.from() til at konvertere listen
@@ -44,16 +57,28 @@ til et array hvor du kan bruge map funktionen til at ændre baggrundsfarven til 
 array.from beskrivelse HER: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from
 */
 
-// din kode her
+let arrayPurpleFigures = Array.from(document.getElementsByClassName("purpleFigures"));
 
+arrayPurpleFigures.map(element => {
+    element.style.backgroundColor = "red";
+  });
 
+  console.log(arrayPurpleFigures);
 /* opgave 3.3
 Brug din array til at ændre h3 elementets, inden i purpleFigures, tekst til RED. du kan bruge
 myElement.children[0].innerHTML til at ændre 1. child elements inner html.
 */
 
 
-// din kode her
+arrayPurpleFigures.map(element => {
+   
+    element.style.backgroundColor = "red";
+    
+    let childElements = element.children;
+    for (let i = 0; i < childElements.length; i++) {
+      childElements[i].innerHTML = "red";
+    }
+  });
 
 
 
@@ -70,7 +95,26 @@ const myData = {
 };
 
 
-// din kode her
+
+// fik hjælp af Chat gpt
+const opgaveFourContainer = document.getElementById('opgaveFour');
+
+
+const nameElement = document.createElement('h1');
+const imageElement = document.createElement('img');
+const descriptionElement = document.createElement('p');
+
+nameElement.textContent = myData.name;
+imageElement.src = myData.image;
+descriptionElement.textContent = myData.description;
+
+
+opgaveFourContainer.appendChild(nameElement);
+opgaveFourContainer.appendChild(imageElement);
+opgaveFourContainer.appendChild(descriptionElement);
+    
+
+
 
 
 

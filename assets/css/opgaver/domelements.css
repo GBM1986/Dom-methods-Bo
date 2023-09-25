@@ -19,6 +19,10 @@
   background-color: rgb(255, 234, 3);
 }
 
+#nredFigure {
+  background-color: blue !important;
+}
+
 .purpleFigures {
   background-color: rgb(251, 0, 255);
 }
